@@ -15,7 +15,7 @@
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"/>
   <link rel="stylesheet"
-        href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/blitzer/jquery-ui.css" />
+        href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/blitzer/jquery-ui.css"/>
 </head>
 <body>
 <!-- Header -->
@@ -151,10 +151,26 @@
       </div>
       <div class="col l3 s12">
         <h5 class="white-text">Contact</h5>
-        <p class="grey-text text-lighten-4">Place Colonel Bremer 115<br/>B-1030 Bruxelles</p>
-        <p><button id="show-map" class="map-button">Plan d'accès</button></p>
-        <p class="grey-text text-lighten-4">Tél.:+32 (0)2 215 92 00<br/>Gsm: +32 (0)475 59 30 23</p>
-        <p class="grey-text text-lighten-4">E-mail: info@vert-tige.be<br/>N° TVA: BE0808.829.352</p>
+        <div class="col">
+          <p class="grey-text text-lighten-4">Place Colonel Bremer 115<br/>B-1030 Bruxelles</p>
+          <p>
+            <button id="show-map-s" class="map-button">Plan d'accès</button>
+          </p>
+          <p class="grey-text text-lighten-4">Tél.:+32 (0)2 215 92 00<br/>Gsm: +32 (0)475 59 30 23
+          </p>
+          <p class="grey-text text-lighten-4">E-mail: info@vert-tige.be<br/>N° TVA: BE0808.829.352
+          </p>
+        </div>
+        <div class="col">
+          <p class="grey-text text-lighten-4">Place Colonel Bremer 115<br/>B-1030 Bruxelles</p>
+          <p>
+            <button id="show-map-wb" class="map-button">Plan d'accès</button>
+          </p>
+          <p class="grey-text text-lighten-4">Tél.:+32 (0)2 215 92 00<br/>Gsm: +32 (0)475 59 30 23
+          </p>
+          <p class="grey-text text-lighten-4">E-mail: info@vert-tige.be<br/>N° TVA: BE0808.829.352
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -166,7 +182,7 @@
 </footer>
 
 <div id="dialog" style="display: none">
-  <div id="dvMap" style="height: 380px; width: 580px;"></div>
+  <div id="dvMap" style="height: 450px; width: 600px;"></div>
 </div>
 
 <!-- Scripts -->
@@ -177,7 +193,7 @@
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.js"
         type="text/javascript"></script>
 <script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQvu2iDZkeAgV-H46Q8VkAp4KlOSMK5os"></script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQvu2iDZkeAgV-H46Q8VkAp4KlOSMK5os&amp;language=fr"></script>
 
 <script type="application/javascript">
   $(document).ready(function () {
@@ -185,25 +201,58 @@
   })
 
   $(function () {
-    $("#show-map").click(function () {
+    $("#show-map-s").click(function () {
       $("#dialog").dialog({
         modal: true,
-        title: "Avenue Dailly 115, 1030 Bruxelles",
+        title: 'Avenue Dailly 115, 1030 Bruxelles',
         width: 600,
         hright: 450,
+        resizable: true,
         buttons: {
           Fermer: function () {
             $(this).dialog('close');
           }
         },
         open: function () {
+          var mytLatLong = new google.maps.LatLng(50.8557893, 4.3832492);
           var mapOptions = {
-            center: new google.maps.LatLng(50.8557893, 4.3832492),
-            zoom: 18,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            gestureHandling: "auto"
+            center: mytLatLong
           }
           var map = new google.maps.Map($("#dvMap")[0], mapOptions);
+          var marker = new google.maps.Marker({
+            position: mytLatLong,
+            map: map,
+            title: 'Vert Tige Schaerbeek'
+          });
+        }
+      });
+    });
+  })
+
+  $(function () {
+    $("#show-map-wb").click(function () {
+      $("#dialog").dialog({
+        modal: true,
+        title: "Place Léopold Wiener 10, 1170 Watermael-Boitsfort",
+        width: 600,
+        hright: 450,
+        resizable: true,
+        buttons: {
+          Fermer: function () {
+            $(this).dialog('close');
+          }
+        },
+        open: function () {
+          var myLatLong = new google.maps.LatLng(50.797784, 4.418091);
+          var mapOptions = {
+            center: myLatLong
+          }
+          var map = new google.maps.Map($("#dvMap")[0], mapOptions);
+          var marker = new google.maps.Marker({
+            position: myLatLong,
+            map: map,
+            title: 'Vert Tige Watermael-Boitsfort'
+          });
         }
       });
     });
