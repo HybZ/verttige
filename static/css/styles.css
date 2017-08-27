@@ -1,0 +1,37 @@
+
+
+body {
+  background-image: url('../img/body.jpg');
+}
+
+/* Footer */
+#map {
+  width: auto;
+  min-height: 400px;
+  background-color: grey;
+}
+
+/* Menu */
+#logo-img {
+  width: 80px;
+}
+
+/* Content */
+.container .section {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* Header */
+.navbar-fixed .nav-wrapper .brand-logo img {
+  height: 58px;
+}
+
+.col.s12.m4.l4.crop-img {
+  max-height: 312px;
+  overflow: hidden;
+}
+
+.materialboxed.responsive-img {
+  padding: 5px;
+}
