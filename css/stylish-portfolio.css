@@ -87,7 +87,7 @@ h6 {
   height: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/bg-masthead.jpg");
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/vbackground.jpeg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -121,8 +121,8 @@ h6 {
   -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
   transform: translateX(250px);
-  background: #1D809F;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  background: #8C1A6A;
+  border-left: 1px solid rgba(36, 7, 33, 0.1);
 }
 
 .sidebar-nav {
@@ -189,7 +189,7 @@ h6 {
   height: 50px;
   text-align: center;
   color: #fff;
-  background: rgba(52, 58, 64, 0.5);
+  background: rgba(64, 5, 60, 0.5);
   line-height: 50px;
   z-index: 999;
 }
@@ -199,7 +199,15 @@ h6 {
 }
 
 .menu-toggle:hover {
-  background: #343a40;
+  background: #8C1A6A;
+}
+
+.material-icons {
+  font-size: 60px !important;
+}
+
+.fa-gift, .fa-leaf {
+  font-size: 60px !important;
 }
 
 .service-icon {
@@ -209,6 +217,17 @@ h6 {
   width: 7rem;
   display: block;
   line-height: 7.5rem;
+  font-size: 2.25rem;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.service-icon-material {
+  background-color: #fff;
+  color: #1D809F;
+  height: 7rem;
+  width: 7rem;
+  display: block;
+  line-height: 9.5rem;
   font-size: 2.25rem;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
 }

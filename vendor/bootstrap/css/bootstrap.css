@@ -2501,6 +2501,12 @@ fieldset:disabled a.btn {
   pointer-events: none;
 }
 
+.btn-fuchsia {
+  color: #fff;
+  background-color: #8C1A6A;
+  border-color: #8C1A6A;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #007bff;
@@ -8869,6 +8875,10 @@ a.text-warning:hover, a.text-warning:focus {
 
 a.text-danger:hover, a.text-danger:focus {
   color: #bd2130 !important;
+}
+
+.text-fuchsia {
+  color: #8C1A6A!important;
 }
 
 .text-light {
